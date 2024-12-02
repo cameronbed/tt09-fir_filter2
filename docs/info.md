@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+The Finite Impulse Response (FIR) Filter handles input that comes in short bursts. The output is filtered by an accumulating factor. Each input is added back to the factor so that the next output filtering is influenced by the previous input. This unconfitional feedback loop prevents bursts of noise from affecting the longterm output.
 
 ## How to test
 
