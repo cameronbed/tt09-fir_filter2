@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-The Finite Impulse Response (FIR) Filter handles input that comes in short bursts. The output is filtered by an accumulating factor. Each input is added back to the factor so that the next output filtering is influenced by the previous input. This unconfitional feedback loop prevents bursts of noise from affecting the longterm output.
+Our design, fir_filter_2, implements a 13-tap FIR filter that processes signals through a shift register mechanism. The filter maintains a register of recent input samples and predefined coefficients, inserting new samples at the beginning and shifting older samples down. By multiplying each sample with its corresponding coefficient and summing these products, the filter generates a filtered output that considers both current and historical input data.
 
 ## How to test
 
-Explain how to use your project
+To test an FIR filter use a digital signal processor or microcontroller with analog input capabilities. Generate known input signals like sine waves or noise, applying the filter, and then comparing input and output signals using an oscilloscope or spectrum analyzer.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+External hardware required for testing includes an Analog-to-Digital Converter (ADC), Digital-to-Analog Converter (DAC), signal generator, and a spectrum analysis tool.
