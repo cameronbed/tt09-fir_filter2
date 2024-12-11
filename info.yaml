@@ -33,24 +33,24 @@ pinout:
   ui[7]: "fir_input[7]"
 
   # Outputs
-  uo[0]: "fir_input[8]"
-  uo[1]: "fir_input[9]"
-  uo[2]: "fir_input[10]"
-  uo[3]: "fir_input[11]"
-  uo[4]: "fir_input[12]"
-  uo[5]: "fir_input[13]"
-  uo[6]: "fir_input[14]"
-  uo[7]: "fir_input[15]"
+  uo[0]: "fir_output[0]"
+  uo[1]: "fir_output[1]"
+  uo[2]: "fir_output[2]"
+  uo[3]: "fir_output[3]"
+  uo[4]: "fir_output[4]"
+  uo[5]: "fir_output[5]"
+  uo[6]: "fir_output[6]"
+  uo[7]: "fir_output[7]"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "fir_output[8]"
+  uio[1]: "fir_output[9]"
+  uio[2]: "fir_output[10]"
+  uio[3]: "fir_output[11]"
+  uio[4]: "fir_output[12]"
+  uio[5]: "fir_output[13]"
+  uio[6]: "fir_output[14]"
+  uio[7]: "fir_output[15]"
 
 # Do not change!
 yaml_version: 6
