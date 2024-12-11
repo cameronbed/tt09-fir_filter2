@@ -18,7 +18,7 @@ module tt_um_fir_filter2 (
 
   wire rst = ~rst_n;
   wire [7:0] fir_input = ui_in;
-  wire [15:0] uo_uio_out = {uo_out, uio_out};
+  wire [15:0] uo_uio_out;
   wire a;
   wire b;
 
@@ -27,11 +27,11 @@ module tt_um_fir_filter2 (
   // input [7:0] x_rsc_dat;
   // output x_triosy_lz;
   fir fir_filter( 
-    .clk(clk),              // Clock
-    .rst(rst),           // Reset
-    .y_rsc_dat(uo_uio_out), // Output data
-    .y_triosy_lz(b),    // Output enable
-    .x_rsc_dat(fir_input),      // Input data
+    .clk(clk),                // Clock
+    .rst(rst),                // Reset
+    .y_rsc_dat(uo_uio_out),   // Output data
+    .y_triosy_lz(b),          // Output enable
+    .x_rsc_dat(fir_input),    // Input data
     .x_triosy_lz(a)   
   );
 
