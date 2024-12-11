@@ -49,7 +49,7 @@ async def test_project(dut):
 def fir(shift, x):
     coef = [1, 0, 10, 0, 20, 0, 50, 0, 20, 0, 10, 0, 1]
     y = 0
-    for i in range(len(coef)):
+    for i in range(len(coef)-1, -1, -1):
         if i == 0:
             shift[i] = x
         else:
