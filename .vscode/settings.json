@@ -1,4 +1,7 @@
 {
   "verilog.linting.linter": "verilator",
+  "verilog.linting.path": "/usr/bin/verilator",
+  "verilog.linting.run": "onSave",
   "verilog.formatting.verilogHDL.formatter": "verible-verilog-format"
+}
 }
