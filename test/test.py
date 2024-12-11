@@ -42,8 +42,9 @@ async def test_project(dut):
         await ClockCycles(dut.clk, 100)
         output = ((dut.uo_out.value << 8) | dut.uio_out.value)
         await ClockCycles(dut.clk, 10)
-        print(f"fir_python(shift,{i}): {fir(shift, i)}, fir_verilog{i}: {output}" )
-        assert (output == fir(shift, i))
+        value = fir(shift, i)
+        print(f"fir_python(shift,{i}): {value}, fir_verilog{i}: {output}" )
+        assert (output == value)
 
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.
