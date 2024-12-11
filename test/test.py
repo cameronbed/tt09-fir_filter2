@@ -40,7 +40,8 @@ async def test_project(dut):
     for i in range(30):
         dut.ui_in.value = i
         await ClockCycles(dut.clk, 1)
-        assert ((dut.uo_out.value << 8) | dut.uio_out.value) == fir(shift, i)
+        output = ((dut.uo_out.value << 8) | dut.uio_out.value)
+        assert (output == fir(shift, i))
 
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.
