@@ -39,7 +39,7 @@ async def test_project(dut):
     shift = [0]*13
     for i in range(30):
         dut.ui_in.value = i
-        await ClockCycles(dut.clk, 10)
+        await ClockCycles(dut.clk, 100)
         output = ((dut.uo_out.value << 8) | dut.uio_out.value)
         await ClockCycles(dut.clk, 10)
         print(f"fir_python(shift,{i}): {fir(shift, i)}, fir_verilog{i}: {output}" )
