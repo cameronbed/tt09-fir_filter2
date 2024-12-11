@@ -18,7 +18,7 @@
 
 module ccs_out_v1 (dat, idat);
 
-  parameter integer rscid = 1;
+  // parameter integer rscid = 1;
   parameter integer width = 8;
 
   output   [width-1:0] dat;
@@ -54,6 +54,7 @@ endmodule
 
 module ccs_in_v1 (idat, dat);
 
+  // 
   parameter integer rscid = 1;
   parameter integer width = 8;
 
@@ -273,12 +274,12 @@ module fir_core (
   assign nl_y_rsci_idat = {y_rsci_idat_rsp_0 , y_rsci_idat_rsp_1};
   wire  nl_fir_core_core_fsm_inst_Shift_Accum_Loop_C_5_tr0;
   assign nl_fir_core_core_fsm_inst_Shift_Accum_Loop_C_5_tr0 = ~ i_3_sva;
-  ccs_out_v1 #(.rscid(32'sd1),
+  ccs_out_v1 #(//.rscid(32'sd1),
   .width(32'sd16)) y_rsci (
       .idat(nl_y_rsci_idat[15:0]),
       .dat(y_rsc_dat)
     );
-  ccs_in_v1 #(.rscid(32'sd2),
+  ccs_in_v1 #(//.rscid(32'sd2),
   .width(32'sd8)) x_rsci (
       .dat(x_rsc_dat),
       .idat(x_rsci_idat)
