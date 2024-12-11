@@ -32,6 +32,6 @@ module tt_um_fir_filter2 (
   assign uio_oe  = 1;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  wire _unused = &{ena, 1'b0};
 
 endmodule
