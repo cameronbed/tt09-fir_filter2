@@ -20,7 +20,7 @@ async def test_project(dut):
     dut.ui_in.value = 0
     dut.uio_in.value = 0
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 24)
+    await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
 
     dut._log.info("Test project behavior")
@@ -39,7 +39,7 @@ async def test_project(dut):
     shift = [0]*13
     for i in range(30):
         dut.ui_in.value = i
-        await ClockCycles(dut.clk, 20)
+        await ClockCycles(dut.clk, 23)
         output = ((dut.uo_out.value << 8) | dut.uio_out.value)
         #await ClockCycles(dut.clk, 10)
         value = fir(shift, i)
