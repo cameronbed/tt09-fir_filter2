@@ -1,5 +1,3 @@
-/fir_filter/
-/
 #define N_TAPS 13
 #include "ac_int.h"
 
