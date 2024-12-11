@@ -18,7 +18,7 @@ module tt_um_fir_filter2 (
 
   wire rst = ~rst_n;
   wire [7:0] fir_input = ui_in;
-  wire [15:0] uo_uio_out;
+  wire [15:0] fir_output;
   wire a;
   wire b;
 
@@ -29,15 +29,15 @@ module tt_um_fir_filter2 (
   fir fir_filter( 
     .clk(clk),                // Clock
     .rst(rst),                // Reset
-    .y_rsc_dat(uo_uio_out),   // Output data
+    .y_rsc_dat(fir_output),   // Output data
     .y_triosy_lz(b),          // Output enable
     .x_rsc_dat(fir_input),    // Input data
     .x_triosy_lz(a)   
   );
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = uo_uio_out[15:8]; 
-  assign uio_out = uo_uio_out[7:0];
+  assign uo_out  = fir_output[15:8]; 
+  assign uio_out = fir_output[7:0];
   assign uio_oe  = 1;
 
   // List all unused inputs to prevent warnings
